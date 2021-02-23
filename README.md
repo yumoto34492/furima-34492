@@ -22,17 +22,17 @@
 
 ## items テーブル
 
-| Column             | Type       | Options            |
-| -----------------  | ---------- | -----------------  |
-| product_name       | string     | NOT NULL           |
-| introduction       | text       | NOT NULL           |
-| category_id        | integer    | NOT NULL           | <!-- active_hashで実装のするため、単数形＋「_id」とする -->
-| condition_id       | integer    | NOT NULL           |
-| delivery_fee_id    | integer    | NOT NULL           |
-| delivery_source_id | integer    | NOT NULL           |
-| days_to_ship_id    | integer    | NOT NULL           |
-| selling_price      | integer    | NOT NULL           |
-| user               | references | foreign_key: true  |
+| Column            | Type       | Options            |
+| ----------------  | ---------- | -----------------  |
+| product_name      | string     | NOT NULL           |
+| introduction      | text       | NOT NULL           |
+| category_id       | integer    | NOT NULL           | <!-- active_hashで実装のするため、単数形＋「_id」とする -->
+| condition_id      | integer    | NOT NULL           |
+| delivery_fee_id   | integer    | NOT NULL           |
+| prefectures_id    | integer    | NOT NULL           |
+| days_to_ship_id   | integer    | NOT NULL           |
+| selling_price     | integer    | NOT NULL           |
+| user              | references | foreign_key: true  |
 
 ### Association
 - belongs_to :user
@@ -55,15 +55,15 @@
 
 ## shipping_addresses テーブル
 
-| Column         | Type       | Options            |
-| -------------- | ---------- | -----------------  |
-| post_code      | string     | NOT NULL           |
-| prefectures    | string     | NOT NULL           |
-| municipality   | string     | NOT NULL           |
-| address        | string     | NOT NULL           |
-| building_name  | string     |                    |
-| phone_num      | string     | NOT NULL           |
-| purchases      | references | foreign_key: true  |
+| Column          | Type       | Options            |
+| --------------  | ---------- | -----------------  |
+| post_code       | string     | NOT NULL           |
+| prefectures_id  | integer    | NOT NULL           |
+| municipality    | string     | NOT NULL           |
+| address         | string     | NOT NULL           |
+| building_name   | string     |                    |
+| phone_num       | string     | NOT NULL           |
+| purchases       | references | foreign_key: true  |
 
 ### Association
 - belongs_to :purchases
