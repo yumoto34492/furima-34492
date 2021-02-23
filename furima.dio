@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2021-02-23T06:54:21.189Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="y2Mg6AWrOKJAAUA1E1yN" version="14.2.4" type="embed">
+<mxfile host="65bd71144e" modified="2021-02-23T06:58:48.343Z" agent="5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.53.2 Chrome/87.0.4280.141 Electron/11.2.1 Safari/537.36" etag="dd9pU9mxRaCzWAbIXVsd" version="14.2.4" type="embed">
     <diagram id="SRBzXG1BYhl6Anb4zGb7" name="ページ1">
         <mxGraphModel dx="218" dy="975" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
@@ -45,7 +45,7 @@
                 <mxCell id="17" value="shipping_addresses" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;rounded=0;sketch=0;" parent="1" vertex="1">
                     <mxGeometry x="680" y="680" width="160" height="220" as="geometry"/>
                 </mxCell>
-                <mxCell id="18" value="post_code&#10;&#10;prefectures_id&#10;&#10;municipality&#10;&#10;address&#10;&#10;building_name&#10;&#10;phone_num&#10;&#10;purchases" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="17" vertex="1">
+                <mxCell id="18" value="post_code&#10;&#10;prefecture_id&#10;&#10;municipality&#10;&#10;address&#10;&#10;building_name&#10;&#10;phone_num&#10;&#10;purchases" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" parent="17" vertex="1">
                     <mxGeometry y="26" width="160" height="194" as="geometry"/>
                 </mxCell>
                 <mxCell id="21" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;startArrow=ERone;entryX=-0.009;entryY=0.282;entryDx=0;entryDy=0;entryPerimeter=0;targetPerimeterSpacing=0;endSize=20;startSize=20;startFill=0;exitX=1.007;exitY=0.241;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="5" target="12" edge="1">

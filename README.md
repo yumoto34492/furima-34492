@@ -63,7 +63,7 @@
 | address         | string     | NOT NULL           |
 | building_name   | string     |                    |
 | phone_num       | string     | NOT NULL           |
-| purchases       | references | foreign_key: true  |
+| purchase        | references | foreign_key: true  |
 
 ### Association
 - belongs_to :purchase
