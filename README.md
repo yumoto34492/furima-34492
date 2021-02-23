@@ -29,7 +29,7 @@
 | category_id       | integer    | NOT NULL           | <!-- active_hashで実装のするため、単数形＋「_id」とする -->
 | condition_id      | integer    | NOT NULL           |
 | delivery_fee_id   | integer    | NOT NULL           |
-| prefectures_id    | integer    | NOT NULL           |
+| prefecture_id     | integer    | NOT NULL           |
 | days_to_ship_id   | integer    | NOT NULL           |
 | selling_price     | integer    | NOT NULL           |
 | user              | references | foreign_key: true  |
@@ -50,7 +50,7 @@
 ### Association
 - belongs_to :user
 - belongs_to :item
-- has_one :shipping_addresses
+- has_one :shipping_address
 <!-- 住所をは購入する都度入力するため、ユーザーとアイテムとは紐付けない -->
 
 ## shipping_addresses テーブル
@@ -58,7 +58,7 @@
 | Column          | Type       | Options            |
 | --------------  | ---------- | -----------------  |
 | post_code       | string     | NOT NULL           |
-| prefectures_id  | integer    | NOT NULL           |
+| prefecture_id   | integer    | NOT NULL           |
 | municipality    | string     | NOT NULL           |
 | address         | string     | NOT NULL           |
 | building_name   | string     |                    |
@@ -66,4 +66,4 @@
 | purchases       | references | foreign_key: true  |
 
 ### Association
-- belongs_to :purchases
+- belongs_to :purchase
