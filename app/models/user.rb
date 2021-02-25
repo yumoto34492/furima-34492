@@ -10,10 +10,10 @@ class User < ApplicationRecord
         validates :last_name
         validates :first_name
       end
-      with_options format: { with: /\A[ァ-ヶ]+\z/,  message: 'Full-widthatakana characters'} do
+      with_options format: { with: /\A[ァ-ヶー－]+\z/, message: 'Full-widthkatakana characters'} do
         validates :last_name_kana
         validates :first_name_kana
       end
     validates :password, length: { minimum: 6 }, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers'}
-    end
+  end
 end
