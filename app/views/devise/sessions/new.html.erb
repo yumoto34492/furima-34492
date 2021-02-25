@@ -1,5 +1,4 @@
 <%= render "shared/second-header"%>
-<%#  新規登録と同様にユーザーモデルを指定し、ログインの処理としてsessions#createのパスを記述する%>
 <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
