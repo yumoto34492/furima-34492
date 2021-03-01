@@ -14,7 +14,6 @@ RSpec.describe Item, type: :model do
       it 'imageが選択されていないと出品できない' do
         @item.image = nil
         @item.valid?
-        # binding.pry
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
       it 'product_nameが空では出品できない' do
@@ -33,29 +32,29 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Introduction can't be blank")
       end
       it 'category_idが空では出品できない' do
-        @item.category_id = '1'
+        @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it 'condition_idが空では出品できない' do
-        @item.condition_id = '1'
+        @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition can't be blank")
+        expect(@item.errors.full_messages).to include('Condition must be other than 1')
       end
       it 'delivery_fee_idが空では出品できない' do
-        @item.delivery_fee_id = '1'
+        @item.delivery_fee_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery fee can't be blank")
+        expect(@item.errors.full_messages).to include('Delivery fee must be other than 1')
       end
       it 'prefecture_id が空では出品できない' do
-        @item.prefecture_id = '1'
+        @item.prefecture_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@item.errors.full_messages).to include('Prefecture must be other than 1')
       end
       it 'days_to_ship_idが空では出品できない' do
-        @item.days_to_ship_id = '1'
+        @item.days_to_ship_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Days to ship can't be blank")
+        expect(@item.errors.full_messages).to include('Days to ship must be other than 1')
       end
       it 'selling_priceが空では出品できない' do
         @item.selling_price = ''
@@ -68,12 +67,12 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Selling price is not a number')
       end
       it 'selling_priceが300円以上でなければ出品できない' do
-        @item.selling_price = '200'
+        @item.selling_price = 200
         @item.valid?
         expect(@item.errors.full_messages).to include('Selling price must be greater than or equal to 300')
       end
       it 'selling_priceが9,999,999円以下でなければ出品できない' do
-        @item.selling_price = '10000000'
+        @item.selling_price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include('Selling price must be less than or equal to 9999999')
       end
