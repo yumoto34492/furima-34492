@@ -12,19 +12,20 @@ class OrdersController < ApplicationController
 
   def create
     @purchases_shipping_address = PurchasesShippingAddress.new(purchases_shipping_address_params)
-   if @purchases_shipping_address.valid?
-    @purchases_shipping_address.save
-    redirect_to root_path
-   else
-    render :index
-   end
+    # binding.pry
+    if @purchases_shipping_address.valid?
+      @purchases_shipping_address.save
+      redirect_to root_path
+    else
+      render :index
+    end
   end
 
 
   private
 
   def purchases_shipping_address_params
-    params.permit(:purchases_shipping_address).permit(:post_code, :prefecture, :municipality, :address, :building_name, :phone_num)
+    params.require(:purchases_shipping_address).permit(:post_code, :prefecture_id, :municipality, :address, :building_name, :phone_num, :token).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
   def set_item
