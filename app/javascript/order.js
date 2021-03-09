@@ -26,6 +26,8 @@ const pay = () => {
       document.getElementById("purchases_shipping_address_exp_month").removeAttribute("name");
       document.getElementById("purchases_shipping_address_exp_year").removeAttribute("name");
       document.getElementById("purchases_shipping_address_cvc").removeAttribute("name");
+
+      document.getElementById("charge-form").submit();
       });
   });
 };
