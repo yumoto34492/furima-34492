@@ -3,11 +3,6 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
   
   def index
-    if current_user.id != @item.user_id && @item.purchase == nil
-      @purchases_shipping_address = PurchasesShippingAddress.new
-    else
-      redirect_to root_path
-    end
   end
 
   def create
@@ -30,6 +25,11 @@ class OrdersController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+    if current_user.id != @item.user_id && @item.purchase == nil
+      @purchases_shipping_address = PurchasesShippingAddress.new
+    else
+      redirect_to root_path
+    end
   end
 
   def pay_item
