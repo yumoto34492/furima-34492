@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   before_action :item_user, only: [:edit, :update]
 
   def index
+    @purchases = Purchase.all
     @items = Item.order('created_at DESC')
   end
 
