@@ -10,6 +10,10 @@ RSpec.describe PurchasesShippingAddress, type: :model do
       it '全項目が存在すれば購入できる' do
         expect(@purchases_shipping_address).to be_valid
       end
+      it 'building_nameは空でも登録できる' do
+        @purchases_shipping_address.building_name = ''
+        expect(@purchases_shipping_address).to be_valid
+      end
     end
     context '商品が購入できないとき' do
       it 'postal_codeが空だと保存できないこと' do
@@ -24,6 +28,11 @@ RSpec.describe PurchasesShippingAddress, type: :model do
       end
       it 'prefecture_idが空だと保存できないこと' do
         @purchases_shipping_address.prefecture_id= ''
+        @purchases_shipping_address.valid?
+        expect(@purchases_shipping_address.errors.full_messages).to include("Prefecture can't be blank")
+      end
+      it 'prefecture_idが1だと保存できないこと' do
+        @purchases_shipping_address.prefecture_id= 1
         @purchases_shipping_address.valid?
         expect(@purchases_shipping_address.errors.full_messages).to include("Prefecture can't be blank")
       end
@@ -61,6 +70,16 @@ RSpec.describe PurchasesShippingAddress, type: :model do
         @purchases_shipping_address.token = nil
         @purchases_shipping_address.valid?
         expect(@purchases_shipping_address.errors.full_messages).to include("Token can't be blank")
+      end
+      it 'user_idが空だと保存できないこと' do
+        @purchases_shipping_address.user_id = ''
+        @purchases_shipping_address.valid?
+        expect(@purchases_shipping_address.errors.full_messages).to include("User can't be blank")
+      end
+      it 'item_idが空だと保存できないこと' do
+        @purchases_shipping_address.item_id = ''
+        @purchases_shipping_address.valid?
+        expect(@purchases_shipping_address.errors.full_messages).to include("Item can't be blank")
       end
     end
   end

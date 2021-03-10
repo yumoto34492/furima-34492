@@ -4,7 +4,10 @@ FactoryBot.define do
     prefecture_id     { 5 }
     municipality      { '横浜市' }
     address           { '青山1' }
+    building_name     { 'ビル１' }
     phone_num         { '09099999999' }
     token             { "tok_asdfgh234567890" }
+    user_id           { 1 }
+    item_id           { 2 }
   end
 end
