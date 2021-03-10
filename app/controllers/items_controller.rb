@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
 
   def edit
     if @item.purchase != nil
-      redirect_to action :index
+      redirect_to action: :index
     end
   end
 
