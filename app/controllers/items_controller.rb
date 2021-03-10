@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.order('created_at DESC')
-    
   end
 
   def new
@@ -53,7 +52,7 @@ class ItemsController < ApplicationController
   end
 
   def item_user
-    if current_user.id != @item.user_id
+    if current_user.id != @item.user_id || @item.purchase != nil
       redirect_to action: :index
     end
   end
